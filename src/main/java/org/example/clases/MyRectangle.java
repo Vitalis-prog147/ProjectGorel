@@ -18,21 +18,22 @@ public class MyRectangle  {
     private int maxY;
     private int[] xCoordinatesInArray;
     private int[] yCoordinatesInArray;
+    private Point[][] representationShapeInArray;
 
-    public MyRectangle(int x, int y, int width, int height) {
+    public MyRectangle(int minX, int minY, int maxX, int maxY) {
         this.minX = minX;
         this.minY = minY;
         this.maxX = maxX;
         this.maxY = maxY;
     }
 
-    public int getWidth(){
-        return maxX-minX;
+    public int getWidth(){ //ToDO неверная
+        return (maxX - minX);
     }
 
 
-    public int getHeight() {
-        return maxY-minY;
+    public int getHeight() { //ToDO неверная
+        return (maxY - minY);
     }
 
 }

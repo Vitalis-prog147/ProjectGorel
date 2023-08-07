@@ -2,25 +2,44 @@ package org.example;
 
 import org.example.clases.MyRectangle;
 import org.example.clases.MyRing;
+import org.example.draw.DrawColor;
+import org.example.draw.DrawMono;
+import org.example.draw.MakingAdjustmentsForRendering;
 import org.example.logic.PlacementPoint;
+import org.example.logic.RepresentationArray;
+import org.example.supplier.SupplierTestData4;
 
-import java.awt.*;
-import java.awt.geom.Rectangle2D;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         //System.out.println("Hello world!");
-        MyRectangle zoneRectangle = new MyRectangle(0,0,40,50);
-        List<MyRectangle> alarmZone = new ArrayList<>();
-        alarmZone.add(0,new MyRectangle(0,0,1,1));
-        alarmZone.add(1,new MyRectangle(0,0,2,3));
+        MyRectangle zoneRectangle = SupplierTestData4.supplierZoneRectangle();
+        List<MyRectangle> alarmZone = SupplierTestData4.supplierAlarmZone();
+        List<MyRing> listRing = SupplierTestData4.supplierListRing();
 
-        List<MyRing> listRing = new ArrayList<>();
-        listRing.add(0,new MyRing(0,2,3));
-        listRing.add(1,new MyRing(0,3,4));
+
+        //MakingAdjustmentsForRendering.makingAdjustments(zoneRectangle);//ToDO неверная логика, нет синхронизации
+        //MakingAdjustmentsForRendering.makingAdjustments(alarmZone);//ToDO неверная логика, нет синхронизации
+
+        zoneRectangle.setRepresentationShapeInArray(RepresentationArray.convertingToAnArray(zoneRectangle));
+        for (MyRectangle alarm:alarmZone
+             ) {
+            alarm.setRepresentationShapeInArray(RepresentationArray.convertingToAnArray(alarm));
+        }
+
+        MakingAdjustmentsForRendering.makingAdjustments(zoneRectangle);
+        MakingAdjustmentsForRendering.makingAdjustments(alarmZone);
 
         PlacementPoint.searchPlacementPointForRing(zoneRectangle,alarmZone,listRing);
+
+
+
+        //DrawColor.main(new String[]{"C:\\IDEA_project\\ProjectGorel\\image.png"},zoneRectangle,alarmZone,listRing);
+
+        DrawMono.main(new String[]{"C:\\IDEA_project\\ProjectGorel\\imageMono.png"},zoneRectangle,alarmZone,listRing);
+
+        System.out.println("test");
+        //PlacementPoint.searchPlacementPointForRing(zoneRectangle,alarmZone,listRing);
     }
 }

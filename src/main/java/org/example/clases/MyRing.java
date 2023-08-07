@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
+import java.awt.*;
+
 @Data
 @NonNull
 @NoArgsConstructor
@@ -15,8 +17,10 @@ public class MyRing {
     private int outerRad;
     private int centerX;
     private int centerY;
+    private Point center;
     private int[] xCoordinatesInArray;
     private int[] yCoordinatesInArray;
+    private Point[][] representationShapeInArray;
 
     public MyRing(int id, int innerRad, int outerRad) {
         this.id = id;

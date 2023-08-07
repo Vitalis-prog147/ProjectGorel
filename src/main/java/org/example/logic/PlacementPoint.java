@@ -3,40 +3,56 @@ package org.example.logic;
 import org.example.clases.MyRectangle;
 import org.example.clases.MyRing;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PlacementPoint {
-    public static void searchPlacementPointForRing (MyRectangle placementZone,//TODO перейти на двумерный массив
+    public static void searchPlacementPointForRing (MyRectangle placementZone,
                                                     List <MyRectangle> alarmZone,
                                                     List <MyRing> ringZone){
 
         List <MyRing> placementRing = new ArrayList<>(); //список расставленных колец
         for (MyRing noPlacementRing:ringZone //проход по списку не расставленных колец
              ) {
-            if(true == includedInThePlacementZone(noPlacementRing, placementZone)){//TODO входит кольцо в зону расстановки?
+            if(true == Include.includedInThePlacementZone(noPlacementRing, placementZone)){// входит кольцо в зону расстановки?
                 int valueCoordinateX = placementZone.getMinX() + noPlacementRing.getOuterRad();
-                int valueCoordinateY = placementZone.getMaxY() + noPlacementRing.getOuterRad();
+                int valueCoordinateY = placementZone.getMaxY() - noPlacementRing.getOuterRad();
                 boolean intersection = false;
-                    for (int i = 0; i< placementZone.getYCoordinatesInArray().length; i++){
-                        for (int j = 0; j< placementZone.getXCoordinatesInArray().length; j++) {
-                            if (false == intersectsOtherObjectsAlarm(alarmZone, valueCoordinateX)) {
+                boolean abort = false;
+                int height = placementZone.getHeight()+1;
+                int width = placementZone.getWidth()+1;
+
+                    for (int i = 0; i< height; i++){
+
+                        for (int j = 0; j< width; j++) {
+                            Point center = new Point(valueCoordinateX,valueCoordinateY);
+                            if (true == Intersect.intersectsOtherObjectsAlarm(alarmZone, center)) { //ToDo не работает проверка пересечения
                                 intersection = true;
                                 break;
                             }
 
-                            if (false == intersectsOtherObjectsRing(placementRing, valueCoordinateX)) {
+                            if (true == Intersect.intersectsOtherObjectsRing(placementRing, center)) { //ToDo не работает проверка пересечения
                                 intersection = true;
                                 break;
                             }
 
                             if (false == intersection) {
+                                noPlacementRing.setCenterY(valueCoordinateY);
                                 noPlacementRing.setCenterX(valueCoordinateX);
-                                //TODO добавить новые данные круга в массив
+                                Point centerPoint = new Point(valueCoordinateX,valueCoordinateY);
+                                noPlacementRing.setCenter(centerPoint);
+                                Point[][] ArrayRing = RepresentationArray.convertingToAnArray(noPlacementRing);
+                                noPlacementRing.setRepresentationShapeInArray(ArrayRing);
                                 placementRing.add(noPlacementRing);
+                                abort = true;
                                 break;
                             }
                             valueCoordinateX++;
+                        }
+                        if (true == abort)
+                        {
+                            break;
                         }
                         valueCoordinateY++;
                     }
@@ -46,73 +62,5 @@ public class PlacementPoint {
             }
 
         }
-
-
-    public static boolean doesItIntersect (int valueCoordinate, int [] array){
-        for (int i = 0; i< array.length; i++){
-            if (valueCoordinate == array[i]){
-                if (i == array.length-1){
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    public static boolean includedInThePlacementZone(MyRing noPlacementRing, MyRectangle placementZone){
-        if (true == includedInThePlacementZoneByAxis(
-                noPlacementRing.getOuterRad(),
-                placementZone.getMinX(),
-                placementZone.getMaxX())){
-            if (true == includedInThePlacementZoneByAxis(
-                    noPlacementRing.getOuterRad(),
-                    placementZone.getMinY(),
-                    placementZone.getMaxY())){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean includedInThePlacementZoneByAxis(int RadiusRing, int minCoordinateThePlacementZone, int maxCoordinateThePlacementZone){
-
-        if (Math.abs(maxCoordinateThePlacementZone)-Math.abs(minCoordinateThePlacementZone)>=RadiusRing){
-            return true;
-        }
-        return false;
-    }
-
-    public static <T> boolean intersectsOtherObjects(List <T> list, int valueCoordinate, int [] array){
-
-        for (T obi : list
-        ) {
-                if (false == doesItIntersect(valueCoordinate, array)) { //пересекает ли зоны тревог?
-                    return true;
-                }
-        }
-        return  false;
-    }
-
-    public static boolean intersectsOtherObjectsAlarm(List <MyRectangle> list, int valueCoordinate){
-
-        for (MyRectangle obi : list
-        ) {
-            if (false == doesItIntersect(valueCoordinate, obi.getXCoordinatesInArray())) { //пересекает ли зоны тревог?
-                return true;
-            }
-        }
-        return  false;
-    }
-
-    public static boolean intersectsOtherObjectsRing(List <MyRing> list, int valueCoordinate){
-
-        for (MyRing obi : list
-        ) {
-            if (false == doesItIntersect(valueCoordinate, obi.getXCoordinatesInArray())) { //пересекает ли зоны тревог?
-                return true;
-            }
-        }
-        return  false;
-    }
 
 }

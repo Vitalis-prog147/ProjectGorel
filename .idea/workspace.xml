@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f376138e-daf5-4367-858d-10bfeb1d6d3d" name="Changes" comment="Переделка логики на двумерный массив">
+    <list default="true" id="f376138e-daf5-4367-858d-10bfeb1d6d3d" name="Changes" comment="поправлена логика, дополнение логики на двумерный массив">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/clases/MyImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/draw/DrawColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/draw/DrawMono.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/draw/MakingAdjustmentsForRendering.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/logic/Include.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/logic/Intersect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/logic/RepresentationArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/supplier/SupplierTestData1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/supplier/SupplierTestData2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/supplier/SupplierTestData3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/supplier/SupplierTestData4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/clases/MyRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/clases/MyRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/clases/MyRing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/clases/MyRing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logic/PlacementPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logic/PlacementPoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +61,66 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.draw" />
       <recent name="org.example.clases" />
+      <recent name="org.example.supplier" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.org.example.Main">
+    <configuration name="DrawColor" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.draw.DrawColor" />
+      <module name="ProjectGorel" />
+      <option name="PROGRAM_PARAMETERS" value="C:\\IDEA_project\\ProjectGorel\\image.png" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.draw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Drow.Main" />
+      <module name="ProjectGorel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.draw.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="ProjectGorel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.org.example.Main" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -77,12 +145,36 @@
       <option name="project" value="LOCAL" />
       <updated>1691401857836</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="поправлена логика, дополнение логики на двумерный массив">
+      <created>1691408913976</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691408913976</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Часть логики" />
     <MESSAGE value="Переделка логики на двумерный массив" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделка логики на двумерный массив" />
+    <MESSAGE value="поправлена логика, дополнение логики на двумерный массив" />
+    <option name="LAST_COMMIT_MESSAGE" value="поправлена логика, дополнение логики на двумерный массив" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/draw/DrawMono.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/draw/DrawMono.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
