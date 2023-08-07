@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f376138e-daf5-4367-858d-10bfeb1d6d3d" name="Changes" comment="Часть логики">
+    <list default="true" id="f376138e-daf5-4367-858d-10bfeb1d6d3d" name="Changes" comment="Переделка логики на двумерный массив">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/logic/PlacementPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/logic/PlacementPoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,11 +70,19 @@
       <option name="project" value="LOCAL" />
       <updated>1691364371719</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Переделка логики на двумерный массив">
+      <created>1691401857836</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691401857836</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Часть логики" />
-    <option name="LAST_COMMIT_MESSAGE" value="Часть логики" />
+    <MESSAGE value="Переделка логики на двумерный массив" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделка логики на двумерный массив" />
   </component>
 </project>

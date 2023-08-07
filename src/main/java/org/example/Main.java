@@ -21,6 +21,6 @@ public class Main {
         listRing.add(0,new MyRing(0,2,3));
         listRing.add(1,new MyRing(0,3,4));
 
-        PlacementPoint.searchPlacementPointForRing(zoneRectangle.getMinX(),zoneRectangle.getWidth(),alarmZone,listRing);
+        PlacementPoint.searchPlacementPointForRing(zoneRectangle,alarmZone,listRing);
     }
 }
