@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlacementPoint {
-    public static void searchPlacementPointForRing (int minCoordinateThePlacementZone,
+    public static void searchPlacementPointForRing (int minCoordinateThePlacementZone,//TODO перейти на двумерный массив
                                                     int sideSizeForPlacement,
                                                     List <MyRectangle> alarmZone,
                                                     List <MyRing> ringZone){
