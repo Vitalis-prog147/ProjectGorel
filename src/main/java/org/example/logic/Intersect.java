@@ -7,22 +7,20 @@ import java.awt.*;
 import java.util.List;
 
 public class Intersect {
-    public static boolean doesItIntersect (Point valueCoordinate, Point [][] array){
-        for (int i = 0; i< array.length; i++){
+    public static boolean doesItIntersect(Point valueCoordinate, Point[][] array) {
+        for (int i = 0; i < array.length; i++) {
 
-            for (int j = 0; j < array[0].length; j++){
-
-                if (array[i][j] == valueCoordinate){
-                        return true;
+            for (int j = 0; j < array[0].length; j++) {
+                Point a = array[i][j];
+                if (true == a.equals(valueCoordinate)) {
+                    return true;
                 }
-
             }
-
         }
         return false;
     }
 
-    public static boolean intersectsOtherObjectsAlarm(List <MyRectangle> list, Point valueCoordinate){
+    public static boolean intersectsOtherObjectsAlarm(List<MyRectangle> list, Point valueCoordinate) {
 
         for (MyRectangle obi : list
         ) {
@@ -30,10 +28,10 @@ public class Intersect {
                 return true;
             }
         }
-        return  false;
+        return false;
     }
 
-    public static boolean intersectsOtherObjectsRing(List <MyRing> list, Point valueCoordinate){
+    public static boolean intersectsOtherObjectsRing(List<MyRing> list, Point valueCoordinate) {
 
         for (MyRing obi : list
         ) {
@@ -41,7 +39,7 @@ public class Intersect {
                 return true;
             }
         }
-        return  false;
+        return false;
     }
 
 }

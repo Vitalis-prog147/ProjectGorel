@@ -18,8 +18,6 @@ public class MyRing {
     private int centerX;
     private int centerY;
     private Point center;
-    private int[] xCoordinatesInArray;
-    private int[] yCoordinatesInArray;
     private Point[][] representationShapeInArray;
 
     public MyRing(int id, int innerRad, int outerRad) {

@@ -11,13 +11,11 @@ import java.awt.*;
 @NonNull
 @NoArgsConstructor
 @AllArgsConstructor
-public class MyRectangle  {
+public class MyRectangle {
     private int minX;
     private int minY;
     private int maxX;
     private int maxY;
-    private int[] xCoordinatesInArray;
-    private int[] yCoordinatesInArray;
     private Point[][] representationShapeInArray;
 
     public MyRectangle(int minX, int minY, int maxX, int maxY) {
@@ -27,12 +25,12 @@ public class MyRectangle  {
         this.maxY = maxY;
     }
 
-    public int getWidth(){ //ToDO неверная
+    public int getWidth() { //ToDO неверный расчет
         return (maxX - minX);
     }
 
 
-    public int getHeight() { //ToDO неверная
+    public int getHeight() { //ToDO неверный расчет
         return (maxY - minY);
     }
 
